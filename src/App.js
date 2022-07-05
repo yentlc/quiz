@@ -30,8 +30,17 @@ function App() {
   
   //SAVE QUESTIONS DATA FROM API
   const [questionData, setQuestionData]= useState({})
-
-    console.log(questionData)
+  
+  //QUESTIONS FORM & ELEMENTS
+    let questions = <form>
+       {questionData.map(data => <Question 
+       question={data.question} 
+       answers={[...data.incorrect_answers, data.correct_answer]} 
+       correctAnswer={data.correct_answer}
+       checked={false}
+       //onChange -- cambiar estilo.
+       />)}
+       </form>
 
   return (
     <div className="App">
