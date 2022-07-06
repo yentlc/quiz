@@ -29,13 +29,11 @@ function App() {
     }, [])
   
   //SAVE QUESTIONS DATA FROM API
-  const [questionData, setQuestionData]= useState({})
+  const [questionData, setQuestionData]= useState([])
   console.log(questionData)
 
-//I HAVE TO RESOLVE HOW TO PASS THE PROPS BEFORE THE DATA ARRIVES FROM THE API
-
- /* //QUESTIONS FORM & ELEMENTS
-  const questions= <form>
+ //QUESTIONS FORM & ELEMENTS
+  const questions = <form>
   {questionData.map(data => <Question 
   question={data.question} 
   answers={[...data.incorrect_answers, data.correct_answer]} 
@@ -44,12 +42,12 @@ function App() {
   //onChange -- cambiar estilo.
   />)}
   </form>
-*/
+
 
 
   return (
     <div className="App">
-      {start? <h1> poner preguntas aca</h1>:homepage}
+      {start? questions :homepage}
     </div>
   );
 }
