@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Question from './Question';
-
+import { nanoid } from 'nanoid'
 
 function App() {
 
@@ -35,6 +35,7 @@ function App() {
  //QUESTIONS FORM & ELEMENTS
   const questions = <form>
   {questionData.map(data => <Question 
+  key={nanoid()}
   question={data.question} 
   answers={[...data.incorrect_answers, data.correct_answer]} 
   correctAnswer={data.correct_answer}

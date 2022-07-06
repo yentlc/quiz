@@ -9,16 +9,14 @@ export default function Question(props){
         //Loop through the array selecting a random index, saving it in the new array and removing it from the prior
         while(arr.length>0){
             const randomIndex= Math.floor(Math.random()*arr.length-1)
-            shuffled.push(arr.splice(randomIndex,1))
+            shuffled.push(arr[randomIndex])
+            arr.splice(randomIndex,1)
         }
         
         return shuffled
     }
 
-
-
-
-    console.log(answersArr, shuffleArr)
+    let newArr= shuffleArr(answersArr)
 
     return(
         <fieldset>
