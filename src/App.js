@@ -25,26 +25,31 @@ function App() {
   useEffect(() => {
       fetch('https://opentdb.com/api.php?amount=5')
       .then((response) => response.json())  
-	    .then((data) => setQuestionData(data))
+	    .then((data) => setQuestionData(data.results))
     }, [])
   
   //SAVE QUESTIONS DATA FROM API
   const [questionData, setQuestionData]= useState({})
-  
-  //QUESTIONS FORM & ELEMENTS
-    let questions = <form>
-       {questionData.map(data => <Question 
-       question={data.question} 
-       answers={[...data.incorrect_answers, data.correct_answer]} 
-       correctAnswer={data.correct_answer}
-       checked={false}
-       //onChange -- cambiar estilo.
-       />)}
-       </form>
+  console.log(questionData)
+
+//I HAVE TO RESOLVE HOW TO PASS THE PROPS BEFORE THE DATA ARRIVES FROM THE API
+
+ /* //QUESTIONS FORM & ELEMENTS
+  const questions= <form>
+  {questionData.map(data => <Question 
+  question={data.question} 
+  answers={[...data.incorrect_answers, data.correct_answer]} 
+  correctAnswer={data.correct_answer}
+  checked={false}
+  //onChange -- cambiar estilo.
+  />)}
+  </form>
+*/
+
 
   return (
     <div className="App">
-      {start? < Question/> :homepage}
+      {start? <div></div> :homepage}
     </div>
   );
 }

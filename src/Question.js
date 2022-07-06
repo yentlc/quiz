@@ -1,5 +1,5 @@
 export default function Question(props){
-    //SAVE THE ANSWERS ARRAY
+  //SAVE THE ANSWERS ARRAY
     const answersArr = props.answers
 
     // SHUFFLE THE ARRAY FUNCTION
@@ -15,10 +15,10 @@ export default function Question(props){
         return shuffled
     }
 
-    
 
 
-    console.log(options)
+    console.log(answersArr, shuffleArr(answersArr))
+
     return(
         <fieldset>
             <legend>{props.question}</legend>
@@ -26,4 +26,6 @@ export default function Question(props){
             <p>answer options</p>
         </fieldset>
     )
+    
+  
 }
