@@ -30,19 +30,21 @@ function App() {
   
   //SAVE QUESTIONS DATA FROM API
   const [questionData, setQuestionData]= useState([])
-  console.log(questionData)
-
+  
+console.log(questionData)
  //QUESTIONS FORM & ELEMENTS
-  const questions = <form>
-  {questionData.map(data => <Question 
-  key={nanoid()}
-  question={data.question} 
-  answers={[...data.incorrect_answers, data.correct_answer]} 
-  correctAnswer={data.correct_answer}
-  checked={false}
-  //onChange -- cambiar estilo.
-  />)}
-  </form>
+ 
+  let questions = questionData.length>0?
+  <form>
+    {questionData.map(data => <Question 
+    key={nanoid()}
+    question={data.question} 
+    answers={[...data.incorrect_answers, data.correct_answer]} 
+    correctAnswer={data.correct_answer}
+    checked={false}
+    //onChange -- cambiar estilo.
+    />)}
+  </form> : <div></div>
 
 
 
