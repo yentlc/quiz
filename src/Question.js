@@ -17,7 +17,8 @@ export default function Question(props){
 
 
 
-    console.log(answersArr, shuffleArr(answersArr))
+
+    console.log(answersArr, shuffleArr)
 
     return(
         <fieldset>

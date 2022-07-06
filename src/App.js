@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      {start? <div></div> :homepage}
+      {start? <h1> poner preguntas aca</h1>:homepage}
     </div>
   );
 }
