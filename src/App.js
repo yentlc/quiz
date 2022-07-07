@@ -37,7 +37,10 @@ function App() {
     },[])
 
 
-  
+    const[selectedAnswer,setSelectedAnswer] = useState()
+    function handleChange(event){
+        setSelectedAnswer(event.target.value)
+    }
 
  //QUESTIONS FORM & ELEMENTS
  
@@ -58,13 +61,19 @@ function App() {
   return (
     <div className="App">
 
-      {start && questionData ? questionData.map( elem => <Question 
-    key={nanoid()}
-    question={elem.question} 
-    answers={[...elem.incorrect_answers, elem.correct_answer]} 
-    correctAnswer={elem.correct_answer}
-    //onChange -- cambiar estilo.
-    />) :homepage}
+      {start && questionData ? 
+      <form>
+        {questionData.map( elem => <Question 
+          key={nanoid()}
+          question={elem.question} 
+          answers={[...elem.incorrect_answers, elem.correct_answer]} 
+          correctAnswer={elem.correct_answer}
+          handleChange={handleChange}
+          selectedAnswer={selectedAnswer}
+          //onChange -- cambiar estilo.
+        />)}
+      </form> 
+    :homepage}
     
     </div>
   );
