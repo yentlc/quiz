@@ -24,12 +24,13 @@ function App() {
       console.log("started")
     }
   
+  // //FETCH QUESTIONS DATA FUNCTION- it fetches 5 questions + answers
   const fetchData = () => {
     fetch('https://opentdb.com/api.php?amount=5')
     .then((response) => response.json())  
     .then((data) => setQuestionData(data.results))
   }
-      //FETCH QUESTIONS DATA - it fetches 5 questions 
+ // // USE EFFECT - CALLS FETCH DATA FUNCTION
   useEffect(() => {
     fetchData()
     console.log("useEffect")
@@ -62,7 +63,6 @@ function App() {
     question={elem.question} 
     answers={[...elem.incorrect_answers, elem.correct_answer]} 
     correctAnswer={elem.correct_answer}
-    checked={false}
     //onChange -- cambiar estilo.
     />) :homepage}
     
