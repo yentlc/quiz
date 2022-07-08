@@ -1,9 +1,17 @@
 import { nanoid } from 'nanoid'
-
+import { useState } from 'react'
 
 
 export default function Question(props){
-    
+       // // SAVE ALL SELECTED ANSWERS
+   const[selectedAnswer,setSelectedAnswer] = useState([])
+
+    // // UPDATES SELECTED ANSWER
+    function handleSelection(event){
+        setSelectedAnswer(event.target.value)
+    }
+  
+  
     return(
         <fieldset>
             <legend>{props.question}</legend>
@@ -13,8 +21,8 @@ export default function Question(props){
                         id={ans} 
                         name={props.question} 
                         value={ans} 
-                        checked={props.selectedAnswer === ans && console.log("answer checked->",props.question ,ans)} 
-                        onChange={(e)=>props.handleChange(e,props.question)}
+                        checked={selectedAnswer === ans && console.log("answer checked->",props.question ,ans)} 
+                        onChange={(e)=>handleSelection(e)}
                         />
                     {ans}
                     </label>
