@@ -3,13 +3,14 @@ import { useState } from 'react'
 
 
 export default function Question(props){
-       // // SAVE ALL SELECTED ANSWERS
-   const[selectedAnswer,setSelectedAnswer] = useState([])
 
-    // // UPDATES SELECTED ANSWER
-    function handleSelection(event){
-        setSelectedAnswer(event.target.value)
-    }
+  // // UPDATES SELECTED ANSWER
+  function handleSelection(event){
+    setSelectedAnswer(event.target.value)
+}
+  
+ // // SAVE ALL SELECTED ANSWERS
+ const[selectedAnswer,setSelectedAnswer] = useState([])
   
   
     return(
@@ -33,10 +34,3 @@ export default function Question(props){
   
 }
 
-// ANSWERS AS FORM DATA
-// {props.answers.sort().map(ans => 
-//     <div key={nanoid()} >
-//     <input  type="radio" id={ans} name={props.question} value={ans} checked={false} onChange={()=>console.log("Question is clicked ->", ans)}/>
-//     <label htmlFor={ans} for={ans}>{ans}</label>
-//     </div>
-//     )}

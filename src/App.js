@@ -51,8 +51,6 @@ function App() {
           id={nanoid()}
           question={elem.question} 
           answers={[...elem.incorrect_answers, elem.correct_answer]} 
-          handleChange={handleSelection}
-          selectedAnswer={selectedAnswer}
           //onChange -- cambiar estilo.
         />)}
       </form> 
