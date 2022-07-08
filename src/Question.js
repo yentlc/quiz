@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import { useState } from 'react'
+
 
 
 export default function Question(props){
@@ -14,7 +14,7 @@ export default function Question(props){
                         name={props.question} 
                         value={ans} 
                         checked={props.selectedAnswer === ans && console.log("answer checked->",props.question ,ans)} 
-                        onChange={(e)=>props.handleChange(e)}
+                        onChange={(e)=>props.handleChange(e,props.question)}
                         />
                     {ans}
                     </label>
